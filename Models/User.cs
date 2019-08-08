@@ -13,6 +13,10 @@ namespace formSubmission.Models{
         [MinLength(4, ErrorMessage = "Last Name must be at least 4 characters")]
         public string LastName { get; set; }
         
+        [Required(ErrorMessage = "Please enter your Birth Date")]
+        [ValidDate]
+        public DateTime BirthDate { get; set; }
+        
         [Required(ErrorMessage = "Please your Age")]
         [Range(15,120,ErrorMessage = "Enter a valid age between 15-120")]
         public int Age { get; set; }
@@ -25,5 +29,15 @@ namespace formSubmission.Models{
         [MinLength(8, ErrorMessage = "Password must be at least 8 characters")]
         public string Password { get; set; }
         
+    }
+
+    public class ValidDateAttribute : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if ((DateTime)value > DateTime.Today)
+                return new ValidationResult("Please Enter a Valid Date");
+            return ValidationResult.Success;
+        }
     }
 }

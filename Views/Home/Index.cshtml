@@ -13,21 +13,30 @@
         @model User
         <form asp-action="Create" asp-controller="Home" method="post">
             <span asp-validation-for="FirstName"></span><br>
-            <label asp-for="FirstName">First Name</label>
+            <label asp-for="FirstName">First Name: </label>
             <input asp-for="FirstName"><br>
+
             <span asp-validation-for="LastName"></span><br>
-            <label asp-for="LastName">Last Name</label>
+            <label asp-for="LastName">Last Name: </label>
             <input asp-for="LastName"><br>
+
+            <span asp-validation-for="BirthDate"></span><br>
+            <label asp-for="BirthDate">Birthday: </label>
+            <input type="date" asp-for="BirthDate"><br>
+
             <span asp-validation-for="Age"></span><br>
-            <label asp-for="Age">Age</label>
+            <label asp-for="Age">Age: </label>
             <input asp-for="Age"><br>
+            
             <span asp-validation-for="Email"></span><br>
-            <label asp-for="Email">Email</label>
+            <label asp-for="Email">Email: </label>
             <input asp-for="Email"><br>
+
             <span asp-validation-for="Password"></span><br>
-            <label asp-for="Password">Password</label>
+            <label asp-for="Password">Password: </label>
             <input asp-for="Password"><br>
             <input value="Add User" type="submit">
+
         </form>
     </body>
 </html>
