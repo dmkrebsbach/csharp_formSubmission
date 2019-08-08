@@ -10,6 +10,11 @@
         <div class="container">  
             <div class="displayInfo">
                 <h1>Successfully Registered!</h1>
+                @model User
+                <h1>Super sweet page for:</h1> 
+                <h1>@Model.FirstName @Model.LastName</h1>
+                <h1>Email: @Model.Email</h1>
+                <h1>Age: @Model.Age</h1>
             </div>
         </div>
         <!-- Information displayed for any other class would required a new Div that displays

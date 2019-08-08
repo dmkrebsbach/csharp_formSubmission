@@ -21,7 +21,7 @@ namespace formSubmission
             {
                 Console.Write("###########It's Valid?#########");
                 // do somethng!  maybe insert into db?  then we will redirect
-                return RedirectToAction("Results");
+                return RedirectToAction("Success", newUser);
             }
             else
             {
@@ -31,10 +31,10 @@ namespace formSubmission
             }
         }
 
-        [HttpGet("Results")] //This renders the Main Page        
-        public ViewResult Results()
+        [HttpGet("Results")] //This renders the Results Page        
+        public ViewResult Success(User newUser)
         {
-            return View("Results");
+            return View("Results", newUser);
         }
     }
 }
